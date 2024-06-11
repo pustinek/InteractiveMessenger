@@ -3,6 +3,10 @@ InteractiveMessenger
 
 A format for text in config files to make use of the fancy Minecraft chat features like click, hover, suggest, etc.
 
+## Reason for this fork
+The original repository was not maintained anymore and since I was personally using this library I decided to fork the project
+and add support for HEX colors and publish it to Github Packages.
+
 ## Information
 * **Javadocs:** https://wiefferink.me/InteractiveMessenger/javadocs
 
@@ -11,25 +15,15 @@ A format for text in config files to make use of the fancy Minecraft chat featur
 * **Tobias aka Phoenix:** Initial code structure and initial parser
 
 ## Usage
-1. Add Maven repository:
-
-    ```xml
-    <repositories>
-      <repository>
-        <id>nlthijs48</id>
-        <url>http://maven.wiefferink.me</url>
-      </repository>
-    </repositories>
-    ```
 1. Add Maven dependency:
 
     ```xml
     <dependencies>
       <dependency>
-        <groupId>me.wiefferink</groupId>
-        <artifactId>interactivemessenger</artifactId>
-        <version>1.1-SNAPSHOT</version>
-      </dependency>
+         <groupId>me.pustinek</groupId>
+         <artifactId>interactivemessenger</artifactId>
+         <version>1.2.1</version>
+         </dependency>
     </dependencies>
     ```
 1. Relocate the library (compatibility with other plugins):
@@ -51,7 +45,7 @@ A format for text in config files to make use of the fancy Minecraft chat featur
                             <relocations>
                                 <!-- Relocate InteractiveMessenger -->
                                 <relocation>
-                                    <pattern>me.wiefferink.interactivemessenger</pattern>
+                                    <pattern>me.pustinek.interactivemessenger</pattern>
                                     <shadedPattern>your.package.here.shaded.interactivemessenger</shadedPattern>
                                 </relocation>
                             </relocations>
@@ -102,3 +96,6 @@ The plugin [AreaShop](https://github.com/NLthijs48/AreaShop) is using this libra
 * **[AreaShop](https://github.com/NLthijs48/AreaShop/blob/master/AreaShop/src/main/java/me/wiefferink/areashop/AreaShop.java).message** method used to send messages, could also be done by using `Message.from()` directly.
 * **[/lang](https://github.com/NLthijs48/AreaShop/tree/master/AreaShop/src/main/resources/lang)**: folder with the language files.
 
+## TODO:
+* Write tests for HEX colors
+* Add support for named variables in the message keys
